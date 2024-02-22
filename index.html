@@ -127,9 +127,8 @@
 
     <script>
         document.getElementById('build-space-btn').addEventListener('click', function() {
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', 'path.py', true); // Specify the path to your Python script
-            xhr.send();
+            var randomPath = Math.random().toString(36).substring(2, 8); // Generate a random path
+            window.location.href = 'https://username.github.io/spaces/' + randomPath; // Redirect to the random path
         });
     </script>
 </body>
