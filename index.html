@@ -114,8 +114,8 @@
 </head>
 <body>
     <div class="content">
-        <h1>Welcome to Spaces</h1> <!-- Increased font size for title -->
-        <button class="build-space-btn">Build Space</button> <!-- Added "Build Space" button -->
+        <h1>Welcome to Spaces</h1>
+        <button class="build-space-btn" id="build-space-btn">Build Space</button> <!-- Added id attribute to button -->
     </div>
 
     <div class="contact-container">
@@ -124,5 +124,13 @@
         <a href="https://t.me/tarnkappen"><i class="fab fa-telegram"></i> @tarnkappen on Telegram</a> <!-- Added Telegram icon -->
         <a href="https://mission.apgo.ink/donate" class="donate-btn">Donate</a>
     </div>
+
+    <script>
+        document.getElementById('build-space-btn').addEventListener('click', function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'path.py', true); // Specify the path to your Python script
+            xhr.send();
+        });
+    </script>
 </body>
 </html>
