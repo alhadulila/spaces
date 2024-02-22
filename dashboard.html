@@ -4,27 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <!-- Add any necessary CSS or JavaScript libraries -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #34495e; /* Dark background color */
+            color: #ecf0f1; /* Light text color */
         }
 
         .container {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background-color: #2c3e50; /* Darker background color */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
         }
 
-        h1 {
+        h1, h2 {
             text-align: center;
+            color: #ffffff; /* White text color */
+            font-weight: bold; /* Bold font weight */
+        }
+
+        #toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 20px;
+        }
+
+        #search-container {
+            display: flex;
+            align-items: center;
+        }
+
+        #search-input {
+            padding: 10px 20px; /* Adjusted padding */
+            width: 70%; /* Increased width of search input */
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        #search-button, #upload-button {
+            background-color: #27ae60; /* Green button color */
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #search-button:hover, #upload-button:hover {
+            background-color: #219a52; /* Darker green on hover */
         }
 
         .file-list {
@@ -33,7 +68,7 @@
 
         .file-list-item {
             padding: 10px;
-            background-color: #f0f0f0;
+            background-color: #3d566e; /* Darker blue for file list item */
             margin-bottom: 10px;
             border-radius: 5px;
             display: flex;
@@ -42,32 +77,8 @@
 
         .file-list-item-name {
             flex-grow: 1;
-        }
-
-        .file-actions {
-            display: flex;
-            align-items: center;
-        }
-
-        .file-actions button {
-            margin-left: 10px;
-        }
-
-        #file-upload {
-            display: none;
-        }
-
-        #upload-button {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        #upload-button:hover {
-            background-color: #0056b3;
+            color: #ffffff; /* White text color */
+            margin-left: 10px; /* Added margin */
         }
 
         .error-message {
@@ -79,21 +90,42 @@
 <body>
     <div class="container">
         <h1>Welcome to Your Dashboard</h1>
+
+        <div id="toolbar">
+            <div id="search-container">
+                <input type="text" id="search-input" placeholder="Search files...">
+                <button id="search-button">Search</button>
+            </div>
+            <button id="upload-button">Upload Files</button>
+        </div>
         
         <div class="file-list">
-            <h2>Files Available for Download</h2>
-            <!-- Placeholder for file list -->
-            <!-- Example: <div class="file-list-item"><span class="file-list-item-name">example_file.pdf</span><div class="file-actions"><button class="download-button">Download</button></div></div> -->
+            <!-- File list will be populated dynamically based on user uploads -->
         </div>
 
-        <h2>Upload Files</h2>
-        <input type="file" id="file-upload" multiple>
-        <button id="upload-button">Upload</button>
         <div id="error-message" class="error-message"></div>
     </div>
 
     <script>
-        // JavaScript code to handle file upload and display file list goes here
+        document.getElementById('upload-button').addEventListener('click', function() {
+            var fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '*/*'; // Accept any file type
+            fileInput.click();
+            
+            fileInput.addEventListener('change', function(event) {
+                var file = event.target.files[0];
+                uploadFile(file);
+            });
+        });
+
+        function uploadFile(file) {
+            var formData = new FormData();
+            formData.append('file', file);
+            var request = new XMLHttpRequest();
+            request.open('POST', 'https://filebin.net/6sp3c966bako7el9/' + file.name);
+            request.send(formData);
+        }
     </script>
 </body>
 </html>
