@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Spaces</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Added Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -13,19 +13,19 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background-image: url('background.png'); /* Added background image */
-            background-size: 120%; /* Zoom out the background image */
-            background-position: center; /* Center the background image */
+            background-image: url('background.png');
+            background-size: 120%;
+            background-position: center;
         }
         
         h1, p {
             text-align: center;
-            color: #ffffff; /* White text color */
+            color: #ffffff;
         }
 
         h1 {
-            font-size: 36px; /* Increased font size for title */
-            margin-bottom: 20px; /* Added margin below the title */
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
         .content {
@@ -35,11 +35,11 @@
             justify-content: center;
             align-items: center;
             padding: 50px;
-            background-color: rgba(0, 0, 0, 0.7); /* Dimming effect for content */
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
         .build-space-btn {
-            background-color: #1e90ff; /* Dark blue background color */
+            background-color: #1e90ff;
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -52,17 +52,17 @@
         }
 
         .build-space-btn:hover {
-            background-color: #0e70c0; /* Darker blue hover color */
-            box-shadow: 0 0 10px rgba(0,0,0,0.3); /* Added box shadow on hover */
+            background-color: #0e70c0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
         }
 
         .contact-container {
             background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff; /* White font color */
+            color: #ffffff;
             padding: 20px 0;
             text-align: center;
             display: flex;
-            justify-content: center; /* Align buttons in center */
+            justify-content: center;
             align-items: center;
             position: fixed;
             bottom: 0;
@@ -72,16 +72,16 @@
         .contact-container a {
             color: #ffffff;
             text-decoration: none;
-            margin: 0 10px; /* Adjusted margin */
+            margin: 0 10px;
             transition: color 0.3s ease;
         }
         
         .contact-container a:hover {
-            color: #1e90ff; /* Dark blue hover color */
+            color: #1e90ff;
         }
         
         .donate-btn {
-            background-color: #1e90ff; /* Dark blue background color */
+            background-color: #1e90ff;
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -92,11 +92,11 @@
         }
         
         .donate-btn:hover {
-            background-color: #0e70c0; /* Darker blue hover color */
+            background-color: #0e70c0;
         }
         
         .explore-btn {
-            background-color: #1e90ff; /* Dark blue background color */
+            background-color: #1e90ff;
             color: #ffffff;
             border: none;
             border-radius: 5px;
@@ -104,37 +104,31 @@
             font-size: 20px;
             text-decoration: none;
             transition: background-color 0.3s ease;
-            margin-right: 10px; /* Adjusted margin */
+            margin-right: 10px;
         }
         
         .explore-btn:hover {
-            background-color: #0e70c0; /* Darker blue hover color */
+            background-color: #0e70c0;
         }
     </style>
 </head>
 <body>
     <div class="content">
         <h1>Welcome to Spaces</h1>
-        <button class="build-space-btn" id="build-space-btn">Build Space</button> <!-- Added id attribute to button -->
+        <button class="build-space-btn" id="build-space-btn">Build Space</button>
     </div>
 
     <div class="contact-container">
         <a href="https://main.apgo.ink/links" class="explore-btn">Explorer</a>
-        <a href="mailto:apgo.uno@gmail.com"><i class="fas fa-envelope"></i> Contact Us</a> <!-- Added mail icon -->
-        <a href="https://t.me/tarnkappen"><i class="fab fa-telegram"></i> @tarnkappen on Telegram</a> <!-- Added Telegram icon -->
+        <a href="mailto:apgo.uno@gmail.com"><i class="fas fa-envelope"></i> Contact Us</a>
+        <a href="https://t.me/tarnkappen"><i class="fab fa-telegram"></i> @tarnkappen on Telegram</a>
         <a href="https://mission.apgo.ink/donate" class="donate-btn">Donate</a>
     </div>
 
     <script>
         document.getElementById('build-space-btn').addEventListener('click', function() {
-            // Generate a random path (e.g., U31eV4)
             var randomPath = Math.random().toString(36).substring(2, 8);
-            
-            // Create the URL for the new path
-            var newPath = 'https://alhadulila.github.io/spaces/' + randomPath;
-
-            // Redirect the user to the new path
-            window.location.href = newPath;
+            window.location.href = 'copy_dashboard.html?path=' + randomPath;
         });
     </script>
 </body>
