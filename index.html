@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Spaces</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        h1, p {
+            text-align: center;
+        }
+
+        .contact-container {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff; /* White font color */
+            padding: 20px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-between; /* Align buttons evenly */
+            align-items: center;
+        }
+        
+        .contact-container a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 20px;
+            transition: background-color 0.3s ease; /* Only transition background color */
+        }
+        
+        .contact-container a:hover {
+            background-color: rgba(30, 144, 255, 0.8); /* Semi-transparent darker blue */
+        }
+        
+        .explore-btn, .donate-btn { /* Combined styles for explore and donate buttons */
+            background-color: #1e90ff; /* Dark blue background color */
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 20px;
+            text-decoration: none;
+            transition: background-color 0.3s ease; /* Only transition background color */
+        }
+        
+        .explore-btn:hover, .donate-btn:hover { /* Combined hover effects for explore and donate buttons */
+            background-color: #0e70c0; /* Darker blue hover color */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Spaces</h1>
+    <p>Build Space</p> <!-- Added "Build Space" text -->
+
+    <div class="contact-container">
+        <a href="https://main.apgo.ink/links" class="explore-btn">Explorer</a>
+        <a href="mailto:apgo.uno@gmail.com" class="contact-btn">Contact Us</a>
+        <a href="https://t.me/tarnkappen" class="contact-btn">@tarnkappen on Telegram</a>
+        <a href="https://mission.apgo.ink/donate" class="donate-btn">Donate</a>
+    </div>
+</body>
+</html>
