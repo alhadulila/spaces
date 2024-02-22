@@ -127,8 +127,14 @@
 
     <script>
         document.getElementById('build-space-btn').addEventListener('click', function() {
-            var randomPath = Math.random().toString(36).substring(2, 8); // Generate a random path
-            window.location.href = 'https://username.github.io/spaces/' + randomPath; // Redirect to the random path
+            // Generate a random path (e.g., U31eV4)
+            var randomPath = Math.random().toString(36).substring(2, 8);
+            
+            // Create the URL for the new path
+            var newPath = 'https://spaces.apgo.ink/' + randomPath;
+
+            // Redirect the user to the new path
+            window.location.href = newPath;
         });
     </script>
 </body>
