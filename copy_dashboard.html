@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copying Dashboard</title>
+    <script>
+        // Function to copy the contents of the dashboard HTML file
+        function copyDashboard() {
+            // Retrieve the dashboard HTML content from the source file
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'dashboard.html', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var dashboardContent = xhr.responseText;
+                    // Write the dashboard HTML content to the current page
+                    document.open();
+                    document.write(dashboardContent);
+                    document.close();
+                }
+            };
+            xhr.send();
+        }
+
+        // Call the function to copy the dashboard when the page loads
+        window.onload = copyDashboard;
+    </script>
+</head>
+<body>
+    <p>Please wait while the dashboard is loading...</p>
+</body>
+</html>
