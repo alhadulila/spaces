@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Spaces</title>
+    <title>Coming Soon</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
@@ -110,12 +110,19 @@
         .explore-btn:hover {
             background-color: #0e70c0;
         }
+
+        .lock-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div class="content">
-        <h1>Welcome to Spaces</h1>
-        <button class="build-space-btn" id="build-space-btn">Build Space</button>
+        <h1>Coming Soon</h1>
+        <i class="fas fa-lock lock-icon"></i>
+        <p>We need to raise $15,000 to launch this project.</p>
+        <button class="build-space-btn" id="build-space-btn">Donate Now</button>
     </div>
 
     <div class="contact-container">
@@ -127,8 +134,8 @@
 
     <script>
         document.getElementById('build-space-btn').addEventListener('click', function() {
-            var randomPath = Math.random().toString(36).substring(2, 8);
-            window.location.href = 'copy_dashboard.html?path=' + randomPath;
+            // Redirect to donation page or take necessary action
+            window.location.href = 'https://mission.apgo.ink/donate';
         });
     </script>
 </body>
